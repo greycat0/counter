@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>js</title>
+		<style type="text/css">
+			.amounter
+			{
+				display: inline-block;
+				border: solid 1px;
+				width: 70px;
+				height: 30px;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 30px;
+			}
+
+			.amounter #b1
+			{
+				border: none;
+				height: 30px;
+				width: 20px;
+				border-radius: 5px 0px 0px 5px;
+				float: left;
+				background-color: white;
+			}
+
+			.amounter #b1:hover
+			{
+				border-right: solid 1px #e5f1ff;
+				padding-left: 7px;
+			}
+
+			.amounter #b1:focus
+			{
+				outline:none;
+			}
+			.amounter #b1:active
+			{
+				outline: -webkit-focus-ring-color auto 5px;
+    			outline-color: -webkit-focus-ring-color;
+    			outline-style: auto;
+    			outline-width: 5px;
+			}
+
+			.amounter #t
+			{
+				display: inline;
+				text-align: center;
+				vertical-align: bottom;
+			}
+
+			.amounter #b2
+			{
+				border: none;
+				height: 30px;
+				width: 20px;
+				float: right;
+				border-radius: 0px 5px 5px 0px;
+				background-color: white;
+			}
+			.amounter #b2:hover
+			{
+				border-left: solid 1px #e5f1ff;
+				padding-left: 5px;
+			}
+
+			.amounter #b2:focus
+			{
+				outline:none;
+			}
+			.amounter #b2:active
+			{
+				outline: -webkit-focus-ring-color auto 5px;
+    			outline-color: -webkit-focus-ring-color;
+    			outline-style: auto;
+    			outline-width: 5px;
+			}
+			
+		</style>
+	</head>
+
+
+	<body>
+<!-- 			<script type="text/javascript">
+			function check(form)
+			{
+				console.log(form.elements.text.value);
+				var text = form.elements.text.value;
+				if(text === "")
+				{
+					console.log("empty");
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+		</script> -->
+		<script type="text/javascript">
+			var count = 0;
+			// function click1()
+			// {
+			// 	document.body.appendChild(document.createElement("br"))
+			// 	console.log("click");
+			// 	var div = document.createTextNode("hello, world "+count);
+			// 	//div.innerHTML = "hello, world";
+			// 	document.body.appendChild(div);
+			// 	count++;
+			// }
+			function change(count1)
+			{
+				document.getElementById("t").innerHTML = count1;
+			}
+			function inc()
+			{
+				if (count < 999)
+				{
+					count++;
+				}
+				change(count);
+			}
+			function dec()
+			{
+				if (count > 0)
+				{
+					count--;
+				}
+				change(count);
+			}
+		</script>
+<!-- 	<form onsubmit="return check(this)">
+			<input type="text" id="t" name="text">
+			<input type="submit" id="sub" name="submit">
+		</form> -->
+		<div class="amounter">
+			<button id="b1" onclick="dec()">-</button>
+			<div id="t">0</div>
+			<button id="b2" onclick="inc()">+</button>
+		</div>
+	</body>
+
+</html>
